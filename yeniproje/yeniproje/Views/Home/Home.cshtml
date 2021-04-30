@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+   .card-body{
+       width:900px;
+       height:390px;
+    }
+
+</style>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+        
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header card-header-success">
+                        <div class="ct-chart" id="dailySalesChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Kasa Ekleme</h4>
+                        <p class="card-category">
+                            Yeni kasalar ekleyin.
+                        </p>
+                        <br />
+                        <img src="~/images/1583290.png" width="300" height="300" alt="resim" />
+
+                    </div>
+                    <div align="center">
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> Birkaç dakika önce.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="websiteViewsChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Kasaları Düzenleyin</h4>
+                        <p class="card-category">Kasa özelliklerinizi değiştirin.</p>
+                        <br />
+                        <img src="~/images/edit.png" width="300" height="300" alt="resim" />
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> Birkaç dakika önce.
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-chart">
+                        <div class="card-header card-header-danger">
+                            <div class="ct-chart" id="completedTasksChart"></div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Kasanızı Silin</h4>
+                            <p class="card-category">Mevcut kasalarınızı silin. </p>
+                            <br />
+                            <img src="~/images/shield.png" width="300" height="300" alt="resim" />
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i> Birkaç dakika önce.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+

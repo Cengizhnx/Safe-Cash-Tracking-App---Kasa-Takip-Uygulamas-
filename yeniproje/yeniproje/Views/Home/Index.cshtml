@@ -1,0 +1,122 @@
+﻿@model IEnumerable<yeniproje.Models.EmpClass>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 16px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #8d99bf;
+            color: white;
+        }
+</style>
+<div class="col-md-8">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title">Kasa Listesi</h4>
+            <p class="card-category">Bu alanda var olan kasaları silebilir ve güncelliyebilirsiniz.</p>
+        </div>
+        <div class="card-body">
+
+            <table class="table" id="customers">
+                <thead>
+                    <tr>
+                        <th>
+                            &ensp;
+                            Id
+                        </th>
+                        <th>
+                            Kasa Adı
+                        </th>
+                        <th>
+                            Kasa Sahibi Adı Soyadı
+                        </th>
+                        <th>
+                            Telefon
+                        </th>
+                        <th>
+                            Adres
+                        </th>
+                        <th>
+                            Açıklama
+                        </th>
+                        <th>
+                            Bakiye (₺)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                &ensp; &ensp;
+                                @item.id
+                            </td>
+                            <td>
+                                &ensp;
+                                @item.Kadi
+                            </td>
+                            <td>
+                                @item.Adsoyad
+                            </td>
+                            <td>
+                                @item.Tel
+                            </td>
+                            <td>
+                                @item.Adres
+                            </td>
+                            <td>
+                                @item.Acik
+                            </td>
+                            <td>
+                                @item.Bakiye
+                            </td>
+
+                            <td>
+
+
+                                @Html.ActionLink("Düzenle", "Edit", "Home", new { id = item.id },
+                                new { @class = "btn btn-primary" })
+
+                                @Html.ActionLink("Sil", "Delete", "Home", new { id = item.id },
+                                new { @class = "btn btn-danger" , onclick = "return confirm('Kasayı silmek istediğinize emin misiniz ?');" }
+                                )
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @{
+                if (@TempData["msg"] != null)
+                {
+                    <script>
+                   alert('@TempData["msg"]')
+                    </script>
+                }
+            }
+        </div>
+    </div>
+</div>
